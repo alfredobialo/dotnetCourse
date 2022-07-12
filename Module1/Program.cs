@@ -38,8 +38,8 @@ int a = 0, b = 0;
 do
 {
     b = peoplesAge[a];
-    if (peoplesAge[a] < 30)
-        b = peoplesAge[a] * 2;
+    if (b < 30)  b *= 2; 
+    
     WriteLine($"Age is : {b}");
     a += 1;
 } while (a < peoplesAge.Length);
@@ -55,5 +55,16 @@ do
 
 
 
-bool whileWeStillHavePendingTransactionToProcess() =>  counter < 50;
+bool whileWeStillHavePendingTransactionToProcess() =>  counter < 10;
 
+//While LOOP
+WriteLine("WHILE LOOP ");
+int c = 0, d = 0;
+while (c < peoplesAge.Length) // while this condition is valid
+{
+    d = peoplesAge[c];
+    if (d < 30) d *=  2;
+   
+    WriteLine($"Age Is  : {d}");
+    c += 1;
+}
