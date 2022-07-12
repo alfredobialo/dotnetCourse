@@ -55,7 +55,7 @@ do
 
 
 
-bool whileWeStillHavePendingTransactionToProcess() =>  counter < 10;
+bool whileWeStillHavePendingTransactionToProcess() =>  counter < 2;
 
 //While LOOP
 WriteLine("WHILE LOOP ");
@@ -68,3 +68,17 @@ while (c < peoplesAge.Length) // while this condition is valid
     WriteLine($"Age Is  : {d}");
     c += 1;
 }
+
+var x = 10 % 3; // 1
+/*
+ *      10 Mod 3  = 1
+ *      (10 - (10 % 3)) / 3
+ * 
+ *
+ *
+ * 
+ */
+int getQuotient(int upper, int lower) => (upper - upper % lower) / lower; 
+    
+    
+    WriteLine($"Quotient of 10/3 = {getQuotient(10,3)}");
