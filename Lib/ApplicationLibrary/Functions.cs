@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Module1;
+namespace ApplicationLibrary;
 
 public static class Functions
 {

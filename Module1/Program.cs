@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Module1;
+using ApplicationLibrary;
 using static System.Console;
 
 Console.WriteLine("Hello, World!");
@@ -100,7 +100,7 @@ string rSt = Functions.TitleCase(dta);
 WriteLine($"string '{dta}' is when Title-case will be {rSt}");
 
 var dt = "hello world";
-string rst = Functions.Dash(dt);
+string rst = Functions.SnakeCase(dt);
 
 WriteLine($"string '{dt}' is when - will be {rst}");
 
