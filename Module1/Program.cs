@@ -94,5 +94,15 @@ string rStr = Functions.ReverseString(data);
 
 WriteLine($"string '{data}' is when reversed will be {rStr}");
 
+var dta = "hello world";
+string rSt = Functions.TitleCase(dta);
+
+WriteLine($"string '{dta}' is when Title-case will be {rSt}");
+
+var dt = "hello world";
+string rst = Functions.Dash(dt);
+
+WriteLine($"string '{dt}' is when - will be {rst}");
+
 WriteLine("Press any Key to Terminate Program > ");
 ReadLine();

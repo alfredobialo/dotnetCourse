@@ -1,4 +1,6 @@
-﻿namespace Module1;
+﻿using System.Text;
+
+namespace Module1;
 
 public static class Functions
 {
@@ -11,5 +13,32 @@ public static class Functions
         }
         
         return result;
+    }
+
+    public static string TitleCase(string str)
+    {
+        if (str.Length == 0)
+        {
+            return "Empty String";
+        }
+        else
+            return char.ToUpper(str[0]) + str.Substring(1); 
+    }
+
+    public static string Dash(string str)
+    {
+        var builder = new StringBuilder();
+
+        int count = 0;
+        foreach (var s in str)
+        {
+            builder.Append(s);
+            if(count > 0)
+            {
+                builder.Append('-');
+            }
+        }
+
+        return str;
     }
 }
