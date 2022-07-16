@@ -25,7 +25,7 @@ public static class Functions
             return char.ToUpper(str[0]) + str.Substring(1); 
     }
 
-    public static string Dash(string str)
+    public static string SnakeCase(string str)
     {
         var builder = new StringBuilder();
 
