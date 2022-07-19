@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Module1;
+using ApplicationLibrary;
 using static System.Console;
 
 Console.WriteLine("Hello, World!");
