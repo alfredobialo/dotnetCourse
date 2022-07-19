@@ -30,8 +30,8 @@ public class FunctionTest
     [Fact]
     public void TitleCaseFunc_Should_TitleCase_Any_Given_String()
     {
-        string data = "I am a Boy";
-        string expectation = "I Am A Boy";
+        string data = "I am a Boy but nOt a girl or  laDY";
+        string expectation = "I Am A Boy But Not A Girl Or Lady";
 
         string titleCased = Functions.TitleCase(data);
         
