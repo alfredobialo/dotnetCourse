@@ -30,7 +30,7 @@ public class FunctionTest
     [Fact]
     public void TitleCaseFunc_Should_TitleCase_Any_Given_String()
     {
-        string data = "I am a Boy but nOt a girl or  laDY";
+        string data = "I am a Boy but nOt a girl or     laDY";
         string expectation = "I Am A Boy But Not A Girl Or Lady";
 
         string titleCased = Functions.TitleCase(data);
@@ -38,5 +38,29 @@ public class FunctionTest
         _writer.WriteLine($"TitleCase func: Expected : {expectation}, Actual value: {titleCased}");
         
         Assert.Equal(expectation, titleCased);
+    }
+
+
+    private string ToTitleCase(string input)
+    {
+        string result = String.Empty;
+        if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input))
+            return result;
+
+        input = input.ToLower().Trim();
+        
+        // split string using space as a seperator
+        var splitedInput = input.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+        
+        // If splittedInput[2] = "  Lady";   = "  Lady"
+
+        foreach (var s in splitedInput)
+        {
+            string temp = s.Trim();
+            temp = temp[0].ToString().ToUpper() + temp.Substring(1);
+            result += temp + " ";
+        }
+        
+        return result.Trim();
     }
 }

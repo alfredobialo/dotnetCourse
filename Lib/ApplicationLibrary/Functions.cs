@@ -17,40 +17,25 @@ public static class Functions
         return result;
     }
 
-    public static string TitleCase(string str)
+    public static string TitleCase(string input)
     {
-        // if (str.Length == 0)
-        // {
-        //     return "Empty String";
-        // }
-        // else
-        //     return char.ToUpper(str[0]) + str.Substring(1); 
+        string result = String.Empty;
+        if (string.IsNullOrEmpty(input) || string.IsNullOrWhiteSpace(input))
+            return result;
+
+        input = input.ToLower().Trim();
         
-        // string titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
-        //
-        // return titleCase;
-        //
+        // split string using space as a seperator
+        var splitedInput = input.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (var s in splitedInput)
+        {
+            string temp = s.Trim();
+            temp = temp[0].ToString().ToUpper() + temp.Substring(1);
+            result += temp + " ";
+        }
         
-        str = str.ToLower();
-        char[] array = str.ToCharArray();
-        if (array.Length >= 1)
-        {
-            if (char.IsLower(array[0]))
-            {
-                array[0] = char.ToUpper(array[0]);
-            }
-        }
-        for (int i = 1; i < array.Length; i++)
-        {
-            if (array[i - 1] == ' ')
-            {
-                if (char.IsLower(array[i]))
-                {
-                    array[i] = char.ToUpper(array[i]);
-                }
-            }
-        }
-        return new string(array);
+        return result.Trim();
     }
 
     public static string SnakeCase(string str)
