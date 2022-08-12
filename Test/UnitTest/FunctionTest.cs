@@ -1,6 +1,6 @@
 using ApplicationLibrary;
 using Xunit.Abstractions;
-
+using FluentAssertions;
 namespace UnitTest;
 
 public class FunctionTest
@@ -26,6 +26,35 @@ public class FunctionTest
         Assert.Equal(expectation, reversedStr);
         
     }
+
+    [Theory]
+    [InlineData("Welcome", 4, "come")]
+    [InlineData("Alfred Obialo", 6, "Obialo")]
+    [InlineData("Effective Accounting Business Solution", 17, "Business Solution")]
+    [InlineData("Ride IDE", 3, "IDE")]
+    public void Right_Function_Should_Return_string(string content, int count, string expectation)
+    {
+        // Right(content,4) = come
+        string result = Functions.RightString(content, count);
+        _writer.WriteLine($"RightString({content}, {count}) should be : {expectation}, but Got: {result}");
+        result.Should().NotBeEmpty().And.NotBeNull().And.Be(expectation);
+    } 
+    
+    [Theory]
+    [InlineData("Welcome", 4, "Welc")]
+    [InlineData("Alfred Obialo", 6, "Alfred")]
+    [InlineData("Effective Accounting Business Solution", 17, "Effective Account")]
+    [InlineData("Ride IDE", 3, "Rid")]
+    public void Left_Function_Should_Return_string(string content, int count, string expectation)
+    {
+        // Left(content,4) = come
+        string result = Functions.LeftString(content, count);
+        _writer.WriteLine($"LeftString({content}, {count}) should be : {expectation}, but Got: {result}");
+        result.Should().NotBeEmpty().And.NotBeNull().And.Be(expectation);
+    }
+    
+    
+    
 
     [Fact]
     public void TitleCaseFunc_Should_TitleCase_Any_Given_String()

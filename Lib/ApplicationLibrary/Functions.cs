@@ -54,4 +54,15 @@ public static class Functions
 
         return str;
     }
+
+    public static string RightString(string content, int count)
+    {
+        var result = content.Substring(content.Length - count);
+        return result;
+    }
+    public static string LeftString(string content, int count)
+    {
+        var result = content.Substring(0,count);
+        return result;
+    }
 }
