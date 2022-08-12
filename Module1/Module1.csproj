@@ -8,4 +8,8 @@
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Lib\ApplicationLibrary\ApplicationLibrary.csproj" />
+    </ItemGroup>
+
 </Project>

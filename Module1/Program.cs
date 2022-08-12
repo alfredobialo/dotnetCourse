@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Module1;
+using ApplicationLibrary;
 using static System.Console;
 
 Console.WriteLine("Hello, World!");
@@ -93,6 +93,16 @@ var data = "Hello World";
 string rStr = Functions.ReverseString(data);
 
 WriteLine($"string '{data}' is when reversed will be {rStr}");
+
+var dta = "hello world";
+string rSt = Functions.TitleCase(dta);
+
+WriteLine($"string '{dta}' is when Title-case will be {rSt}");
+
+var dt = "hello world";
+string rst = Functions.SnakeCase(dt);
+
+WriteLine($"string '{dt}' is when - will be {rst}");
 
 WriteLine("Press any Key to Terminate Program > ");
 ReadLine();
